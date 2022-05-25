@@ -27,7 +27,7 @@ function init() {
     }, 1000 / 24);
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x101010);
-    var geometry = new THREE.SphereBufferGeometry(500, 60, 40);
+    var geometry = new THREE.SphereBufferGeometry(5000, 60, 40);
     geometry.scale(-1, 1, 1);
     var uvs = geometry.attributes.uv.array;
     for (var i = 0; i < uvs.length; i += 2) {
@@ -40,7 +40,7 @@ function init() {
     mesh.rotation.y = -Math.PI / 2;
     mesh.layers.set(1);
     scene.add(mesh);
-    var geometry = new THREE.SphereBufferGeometry(500, 60, 40);
+    var geometry = new THREE.SphereBufferGeometry(5000, 60, 40);
     geometry.scale(-1, 1, 1);
     var uvs = geometry.attributes.uv.array;
     for (var i = 0; i < uvs.length; i += 2) {
