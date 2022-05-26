@@ -49,6 +49,7 @@ function init() {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.xr.enabled = true;
+    renderer.xr.setReferenceSpaceType( 'local' );
     container.appendChild(renderer.domElement);
 
     document.body.appendChild(VRButton.createButton(renderer));
