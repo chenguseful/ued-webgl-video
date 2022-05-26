@@ -26,7 +26,7 @@ function init() {
     container = document.getElementById('container');
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1100);
-    camera.target = new THREE.Vector3(0, 0, 0);
+    camera.layers.enable( 1 );
 
     scene = new THREE.Scene();
 
@@ -42,6 +42,7 @@ function init() {
     });
 
     mesh = new THREE.Mesh(geometry, material);
+    mesh.layers.enable( 1 );
 
     scene.add(mesh);
 
@@ -119,16 +120,6 @@ function animate() {
 }
 
 function update() {
-
-    lat = Math.max(-85, Math.min(85, lat));
-    phi = THREE.MathUtils.degToRad(90 - lat);
-    theta = THREE.MathUtils.degToRad(lon);
-
-    camera.position.x = distance * Math.sin(phi) * Math.cos(theta);
-    camera.position.y = distance * Math.cos(phi);
-    camera.position.z = distance * Math.sin(phi) * Math.sin(theta);
-
-    camera.lookAt(camera.target);
 
     renderer.render(scene, camera);
 
