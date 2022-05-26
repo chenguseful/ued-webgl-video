@@ -30,7 +30,7 @@ function init() {
 
     scene = new THREE.Scene();
 
-    var geometry = new THREE.SphereBufferGeometry(500, 60, 40);
+    var geometry = new THREE.SphereBufferGeometry(500, 50, 50);
     geometry.scale(-1, 1, 1);
 
     var video = document.getElementById('video');
